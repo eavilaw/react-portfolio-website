@@ -1,4 +1,5 @@
 // Traducciones generales de UI
+import { getAssetPath } from '../utils/paths.js';
 export const ui = {
   nav: {
     home: { es: "Inicio", en: "Home" },
@@ -45,13 +46,13 @@ export const personalInfo = {
     es: "Apasionado por crear experiencias digitales increíbles y soluciones tecnológicas con tecnologías modernas.",
     en: "Passionate about creating incredible digital experiences and technological solutions with modern technologies."
   },
-  profileImage: "/images/profile.png",
+  profileImage: getAssetPath("/images/profile.png"),
   email: "esteban.avila.w@gmail.com",
   phone: "+56963712788",
   location: "Santiago, Chile",
   cvDocument: {
-    es: "/documents/esteban-avila-cv.html",
-    en: "/documents/esteban-avila-cv-en.html"
+    es: getAssetPath("/documents/esteban-avila-cv.html"),
+    en: getAssetPath("/documents/esteban-avila-cv-en.html")
   },
   website: "https://esteban-avila-portfolio.vercel.app",
   socialLinks: {
@@ -458,14 +459,14 @@ export const projects = {
   {
     title: "Aplicación Android TV para Monitoreo de Conectividad",
     description: "Aplicación Android TV innovadora para sondeo de red y recolección de datos de calidad de conectividad domiciliaria, desde la conceptualización hasta la implementación completa.",
-    image: "/images/projects/Dashboard.jpg",
+    image: getAssetPath("/images/projects/Dashboard.jpg"),
     technologies: ["Android TV", "Python", "AWS", "MongoDB", "Docker"],
     company: "Grupo Z"
   },
   {
     title: "Sistema de Bloqueo de STBs No Autorizados",
     description: "Plataforma especializada para detección y bloqueo efectivo de Set-Top Boxes no autorizados, procesando más de 20GB de datos diarios desde AWS S3 hacia MongoDB.",
-    image: "/images/projects/BloqueoSTB.jpg",
+    image: getAssetPath("/images/projects/BloqueoSTB.jpg"),
     technologies: ["Python", "AWS S3", "MongoDB", "FastAPI", "Docker"],
     company: "ClaroVTR"
   },
@@ -479,7 +480,7 @@ export const projects = {
   {
     title: "Plataforma IPTV Multinacional",
     description: "Sistema integral de transmisión TV en vivo y Video on Demand para Android TV y aplicaciones móviles, desplegado en Puerto Rico, Chile, Panamá, Costa Rica y el Caribe.",
-    image: "/images/projects/iptv.jpg",
+    image: getAssetPath("/images/projects/iptv.jpg"),
     technologies: ["Android TV", "iOS", "Android", ".NET Core", "AWS", "PostgreSQL"],
     company: "Liberty Latin America"
   },
