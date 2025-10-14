@@ -458,14 +458,14 @@ export const projects = {
   {
     title: "Aplicación Android TV para Monitoreo de Conectividad",
     description: "Aplicación Android TV innovadora para sondeo de red y recolección de datos de calidad de conectividad domiciliaria, desde la conceptualización hasta la implementación completa.",
-    image: "/public/images/projects/Dashboard.jpg",
+    image: "/images/projects/Dashboard.jpg",
     technologies: ["Android TV", "Python", "AWS", "MongoDB", "Docker"],
     company: "Grupo Z"
   },
   {
     title: "Sistema de Bloqueo de STBs No Autorizados",
     description: "Plataforma especializada para detección y bloqueo efectivo de Set-Top Boxes no autorizados, procesando más de 20GB de datos diarios desde AWS S3 hacia MongoDB.",
-    image: "/public/images/projects/BloqueoSTB.jpg",
+    image: "/images/projects/BloqueoSTB.jpg",
     technologies: ["Python", "AWS S3", "MongoDB", "FastAPI", "Docker"],
     company: "ClaroVTR"
   },
@@ -479,7 +479,7 @@ export const projects = {
   {
     title: "Plataforma IPTV Multinacional",
     description: "Sistema integral de transmisión TV en vivo y Video on Demand para Android TV y aplicaciones móviles, desplegado en Puerto Rico, Chile, Panamá, Costa Rica y el Caribe.",
-    image: "/public/images/projects/iptv.jpg",
+    image: "/images/projects/iptv.jpg",
     technologies: ["Android TV", "iOS", "Android", ".NET Core", "AWS", "PostgreSQL"],
     company: "Liberty Latin America"
   },
