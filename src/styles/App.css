@@ -1,0 +1,16 @@
+.App {
+  min-height: 100vh;
+  background: #f8f9fa;
+  overflow-x: hidden; /* Evitar scroll horizontal en móviles */
+}
+
+/* Asegurar que todos los elementos se vean correctamente en móviles */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}

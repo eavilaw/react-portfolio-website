@@ -1,0 +1,4 @@
+<!-- Placeholder temporal para Android TV App -->
+<!-- Esta imagen debe ser reemplazada por una interfaz real de Android TV -->
+<!-- Dimensiones recomendadas: 1200x800px -->
+<!-- Buscar en: https://unsplash.com/s/photos/android-tv-interface -->
