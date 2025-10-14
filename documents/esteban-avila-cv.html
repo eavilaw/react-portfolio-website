@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Esteban Avila - Ingeniero en Informática</title>
+    <!-- 
+    INSTRUCCIONES PARA IMPRIMIR SIN FECHA/URL:
+    1. Presiona Ctrl+P
+    2. En "Más configuraciones" → desmarcar "Encabezados y pies de página"
+    3. O usar: Chrome → Menú → Imprimir → Más configuraciones → desmarcar "Encabezados y pies de página"
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            font-size: 11pt;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .header h2 {
+            font-size: 16pt;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 10pt;
+        }
+        
+        .contact-info span {
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+        }
+        
+        .summary {
+            text-align: justify;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .experience-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+        }
+        
+        .job-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .job-company {
+            font-size: 11pt;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .job-period {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .job-description {
+            margin-bottom: 10px;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            margin-bottom: 4px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .achievements li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        @media print {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        
+        .skill-name {
+            font-size: 10pt;
+            color: #555;
+        }
+        
+        .skill-level {
+            font-size: 9pt;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .project-item {
+            border-left: 3px solid #667eea;
+            padding-left: 15px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        
+        .project-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        
+        .project-company {
+            font-size: 10pt;
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        
+        .project-description {
+            font-size: 10pt;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 8px;
+        }
+        
+        .project-tech {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .project-tech strong {
+            color: #2c3e50;
+        }
+        
+        @media print {
+            /* Ocultar encabezados y pies de página del navegador */
+            @page {
+                margin: 0.5in;
+                size: A4;
+            }
+            
+            body {
+                font-size: 10pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            /* Asegurar que no aparezcan URLs ni fechas */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+        
+        /* Ocultar elementos específicos que puedan mostrar metadata */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Instrucciones de impresión (solo visible en pantalla) -->
+    <div class="no-print" style="background: #e3f2fd; padding: 10px; margin: 10px; border-radius: 5px; font-size: 12px; text-align: center; color: #1565c0;">
+        <strong>💡 Para imprimir sin fecha/URL:</strong> Ctrl+P → "Más configuraciones" → desmarcar "Encabezados y pies de página"
+    </div>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>ESTEBAN AVILA</h1>
+            <h2>Ingeniero en Informática</h2>
+            <div class="contact-info">
+                <span>📧 esteban.avila.w@gmail.com</span>
+                <span>📱 +56963712788</span>
+                <span>📍 Santiago, Chile</span>
+                <span>🌐 esteban-avila-portfolio.vercel.app</span>
+                <span>💼 https://www.linkedin.com/in/esteban-avila-32b5b12b/</span>
+                <span>🔗 https://github.com/eavilaw</span>
+            </div>
+        </div>
+
+        <!-- RESUMEN PROFESIONAL -->
+        <div class="section">
+            <h3 class="section-title">RESUMEN PROFESIONAL</h3>
+            <div class="summary">
+                Ingeniero en Informática con más de 17 años de experiencia en desarrollo de aplicaciones web y móviles. 
+                Especialista en tecnologías modernas como React, Node.js, Python, C# y bases de datos relacionales y no relacionales. 
+                Mi enfoque se centra en crear soluciones eficientes, escalables y centradas en el usuario. 
+                Experiencia comprobada en liderazgo técnico, gestión de productos y arquitectura de soluciones cloud.
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Proyectos completados</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Experiencias en organizaciones</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXPERIENCIA PROFESIONAL -->
+        <div class="section">
+            <h3 class="section-title">EXPERIENCIA PROFESIONAL</h3>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Product Manager</div>
+                        <div class="job-company">Grupo Z</div>
+                    </div>
+                    <div class="job-period">Dic 2024 - Presente</div>
+                </div>
+                <div class="job-description">
+                    Liderazgo integral del desarrollo de una aplicación Android TV para monitoreo de conectividad domiciliaria, 
+                    desde la conceptualización hasta la implementación técnica.
+                </div>
+                <ul class="achievements">
+                    <li>Gestión completa del ciclo de vida del producto desde la idea inicial hasta el lanzamiento</li>
+                    <li>Diseño de arquitectura de solución para aplicación Android TV con capacidades de sondeo de red</li>
+                    <li>Liderazgo de equipos multidisciplinarios de desarrollo backend y frontend</li>
+                    <li>Implementación de sistema de recolección de datos de calidad de conectividad del hogar</li>
+                    <li>Desarrollo de estrategia de producto para optimización de servicios de conectividad residencial</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Líder Técnico</div>
+                        <div class="job-company">ClaroVTR</div>
+                    </div>
+                    <div class="job-period">Ene 2022 - Nov 2024</div>
+                </div>
+                <div class="job-description">
+                    Liderazgo en análisis de big data y desarrollo de plataformas avanzadas para visualización ejecutiva, 
+                    enfocado en identificar oportunidades de mejora y detectar errores en plataformas de televisión digital.
+                </div>
+                <ul class="achievements">
+                    <li>Procesamiento y análisis de más de 20GB de datos diarios desde AWS S3 hacia MongoDB</li>
+                    <li>Desarrollo de dashboards ejecutivos para visualización de gráficos utilizados por alta gerencia</li>
+                    <li>Creación de aplicación especializada para bloqueo efectivo de STBs no autorizados</li>
+                    <li>Integración completa de plataformas desde sistemas CRM hasta servidores AWS</li>
+                    <li>Liderazgo de equipos de desarrollo en creación de herramientas de análisis de datos</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Ingeniero de Proyecto</div>
+                        <div class="job-company">Liberty Latin America</div>
+                    </div>
+                    <div class="job-period">Nov 2016 - Ene 2022</div>
+                </div>
+                <div class="job-description">
+                    Liderazgo de implementación y coordinación de proyectos de transmisión TV en vivo y VOD a través de 
+                    dispositivos Android TV y aplicaciones móviles en múltiples países de América Latina.
+                </div>
+                <ul class="achievements">
+                    <li>Gestión de lanzamiento de producto IPTV en Puerto Rico, Chile, Panamá, Costa Rica y el Caribe</li>
+                    <li>Supervisión de operación y desempeño de dispositivos CPE (Android TV e iOS/Android)</li>
+                    <li>Garantía de seguridad mediante prácticas avanzadas de ethical hacking</li>
+                    <li>Desarrollo de herramientas de análisis de datos con Python, .NET Core, AWS y PostgreSQL</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Ingeniero de Proyecto</div>
+                        <div class="job-company">VTR</div>
+                    </div>
+                    <div class="job-period">Nov 2013 - Dic 2016</div>
+                </div>
+                <div class="job-description">
+                    Desarrollo de VTR OnDemand y coordinación técnica del festival Lollapalooza durante cinco años consecutivos, 
+                    liderando equipos multidisciplinarios en transmisión multiplataforma.
+                </div>
+                <ul class="achievements">
+                    <li>Desarrollo backend y frontend de VTR OnDemand para streaming gratuito y de pago</li>
+                    <li>Coordinación multidisciplinaria: Networking, Ingeniería TV, Streaming, Chile Films y Lottus</li>
+                    <li>Soluciones de transmisión en tiempo real para web, móviles, YouTube y canales VTR</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Ingeniero de Software</div>
+                        <div class="job-company">Excelsys Soluciones SPA</div>
+                    </div>
+                    <div class="job-period">Ene 2011 - Nov 2013</div>
+                </div>
+                <div class="job-description">
+                    Desarrollo de soluciones para el sector financiero y de seguros, trabajando con RSA Chile y 
+                    Grupo AVAL Colombia en sistemas de banca corporativa y seguros.
+                </div>
+                <ul class="achievements">
+                    <li>Desarrollo del portal web Seguros Falabella con integración de pasarela WebPay</li>
+                    <li>Implementación de sistemas de banca corporativa para Grupo AVAL (4 subsidiarias)</li>
+                    <li>Integración con ATH para transacciones bancarias interbancarias en Colombia</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Ingeniero de Software</div>
+                        <div class="job-company">Tata Consultancy Services</div>
+                    </div>
+                    <div class="job-period">Mar 2007 - Ene 2011</div>
+                </div>
+                <div class="job-description">
+                    Desarrollo de sistemas gubernamentales y bancarios utilizando tecnología OCR avanzada, 
+                    colaborando con MINEDUC Chile, Banco Itaú y Cencosud.
+                </div>
+                <ul class="achievements">
+                    <li>Desarrollo de sistema SIMCE con tecnología OCR para MINEDUC</li>
+                    <li>Desarrollo técnico de funcionalidades en sistema Check OCR de Banco Itaú</li>
+                    <li>Creación de aplicación de inscripción automática para sistema Puntos Cencosud</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COMPETENCIAS TÉCNICAS -->
+        <div class="section">
+            <h3 class="section-title">COMPETENCIAS TÉCNICAS</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Python</div>
+                    <div class="skill-item">
+                        <span class="skill-name">FastAPI</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">SQLAlchemy</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Django</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Flask</span>
+                        <span class="skill-level">Intermedio (70%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">JavaScript/Node.js</div>
+                    <div class="skill-item">
+                        <span class="skill-name">React</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Next.js</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Express.js</span>
+                        <span class="skill-level">Intermedio (60%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">.NET/C#</div>
+                    <div class="skill-item">
+                        <span class="skill-name">ASP.NET Core</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Web API</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Entity Framework</span>
+                        <span class="skill-level">Avanzado (95%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Blazor</span>
+                        <span class="skill-level">Avanzado (85%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Bases de Datos</div>
+                    <div class="skill-item">
+                        <span class="skill-name">MySQL</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PostgreSQL</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Oracle</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MongoDB</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">AWS Cloud</div>
+                    <div class="skill-item">
+                        <span class="skill-name">EC2</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">ECS/Fargate</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">S3</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">IAM</span>
+                        <span class="skill-level">Avanzado (85%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">API Gateway</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Java/Spring</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Spring Boot</span>
+                        <span class="skill-level">Intermedio (50%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Spring MVC</span>
+                        <span class="skill-level">Intermedio (50%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Spring Data JPA</span>
+                        <span class="skill-level">Intermedio (50%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Maven</span>
+                        <span class="skill-level">Intermedio (50%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">DevOps & Tools</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Postman</span>
+                        <span class="skill-level">Experto (100%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git</span>
+                        <span class="skill-level">Avanzado (95%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">GitHub Actions</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Terraform</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Kubernetes</span>
+                        <span class="skill-level">Intermedio (65%)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Testing & QA</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Postman Testing</span>
+                        <span class="skill-level">Avanzado (95%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Jest</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Unit Testing</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Flake8</span>
+                        <span class="skill-level">Avanzado (90%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Vitest</span>
+                        <span class="skill-level">Avanzado (85%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PyTest</span>
+                        <span class="skill-level">Avanzado (85%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Integration Testing</span>
+                        <span class="skill-level">Avanzado (85%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">NUnit</span>
+                        <span class="skill-level">Avanzado (85%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Playwright</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Selenium</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Tox</span>
+                        <span class="skill-level">Avanzado (80%)</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Cypress</span>
+                        <span class="skill-level">Intermedio (75%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROYECTOS DESTACADOS -->
+        <div class="section">
+            <h3 class="section-title">PROYECTOS DESTACADOS</h3>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-title">Aplicación Android TV para Monitoreo de Conectividad</div>
+                    <div class="project-company">Grupo Z</div>
+                    <div class="project-description">
+                        Aplicación Android TV innovadora para sondeo de red y recolección de datos de calidad de 
+                        conectividad domiciliaria, desde la conceptualización hasta la implementación completa.
+                    </div>
+                    <div class="project-tech">
+                        <strong>Tecnologías:</strong> Android TV, Python, AWS, MongoDB, Docker
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Sistema de Bloqueo de STBs No Autorizados</div>
+                    <div class="project-company">ClaroVTR</div>
+                    <div class="project-description">
+                        Plataforma especializada para detección y bloqueo efectivo de Set-Top Boxes no autorizados, 
+                        procesando más de 20GB de datos diarios desde AWS S3 hacia MongoDB.
+                    </div>
+                    <div class="project-tech">
+                        <strong>Tecnologías:</strong> Python, AWS S3, MongoDB, FastAPI, Docker
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Plataforma IPTV Multinacional</div>
+                    <div class="project-company">Liberty Latin America</div>
+                    <div class="project-description">
+                        Sistema integral de transmisión TV en vivo y Video on Demand para Android TV y aplicaciones móviles, 
+                        desplegado en Puerto Rico, Chile, Panamá, Costa Rica y el Caribe.
+                    </div>
+                    <div class="project-tech">
+                        <strong>Tecnologías:</strong> Android TV, iOS, Android, .NET Core, AWS, PostgreSQL
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">VTR OnDemand - Plataforma de Streaming</div>
+                    <div class="project-company">VTR</div>
+                    <div class="project-description">
+                        Plataforma web completa para streaming de contenido gratuito y de pago, con APIs optimizadas 
+                        para aplicaciones móviles y coordinación técnica del festival Lollapalooza.
+                    </div>
+                    <div class="project-tech">
+                        <strong>Tecnologías:</strong> React, Node.js, MySQL, AWS, REST APIs
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Sistema Bancario Grupo AVAL</div>
+                    <div class="project-company">Excelsys / Grupo AVAL</div>
+                    <div class="project-description">
+                        Implementación de criterios de desarrollo para banca corporativa en 4 subsidiarias del grupo 
+                        financiero más grande de Colombia, incluyendo servicios transaccionales y de consulta.
+                    </div>
+                    <div class="project-tech">
+                        <strong>Tecnologías:</strong> Java, .NET, SQL Server, SOAP, WebServices
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDUCACIÓN -->
+        <div class="section">
+            <h3 class="section-title">EDUCACIÓN</h3>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Ingeniero en Informática</div>
+                        <div class="job-company">Duoc UC</div>
+                    </div>
+                    <div class="job-period">Mar 2002 - Nov 2006</div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Diplomado en Python Data Science</div>
+                        <div class="job-company">Universidad Católica de Chile</div>
+                    </div>
+                    <div class="job-period">Jun 2022 - Ene 2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
