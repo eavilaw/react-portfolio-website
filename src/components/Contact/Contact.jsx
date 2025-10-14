@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from 'emailjs-com';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { personalInfo, ui } from '../../data/portfolioData';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -21,6 +22,8 @@ const Contact = () => {
     message: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -28,12 +31,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar el formulario
-    console.log('Form submitted:', formData);
-    alert(ui.contact.success[language]);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      // Configuración de EmailJS
+      const serviceID = 'service_kx0g0dw';
+      const templateID = 'template_68qr1wi';
+      const userID = '6P4XD7UT7kyiPPCTv';
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'esteban.avila.w@gmail.com'
+      };
+
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      alert(ui.contact.success[language]);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert(ui.contact.error[language] || 'Error al enviar el mensaje. Intenta nuevamente.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -152,8 +177,8 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary btn-full">
-                {ui.contact.send[language]}
+              <button type="submit" className="btn btn-primary btn-full" disabled={isLoading}>
+                {isLoading ? (language === 'es' ? 'Enviando...' : 'Sending...') : ui.contact.send[language]}
               </button>
             </form>
           </motion.div>

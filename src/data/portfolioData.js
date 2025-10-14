@@ -23,6 +23,7 @@ export const ui = {
     message: { es: "Mensaje", en: "Message" },
     send: { es: "Enviar Mensaje", en: "Send Message" },
     success: { es: "¡Mensaje enviado exitosamente!", en: "Message sent successfully!" },
+    error: { es: "Error al enviar el mensaje. Intenta nuevamente.", en: "Error sending message. Please try again." },
     phone: { es: "Teléfono", en: "Phone" },
     location: { es: "Ubicación", en: "Location" }
   },
