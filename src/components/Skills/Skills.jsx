@@ -71,31 +71,49 @@ const Skills = () => {
               setCurrentSlide={setCurrentSlide}
             />
 
-            {/* Carrusel */}
+            {/* Carrusel 3D */}
             <div className="skills-carousel">
-              <div key={`slide-${currentSlide}`} className="skills-slide">
-                <div className="skills-grid">
-                  {skills.categories
-                    .slice(
-                      currentSlide * categoriesPerSlide,
-                      (currentSlide + 1) * categoriesPerSlide
-                    )
-                    .map((category, categoryIndex) => {
-                      const actualIndex = currentSlide * categoriesPerSlide + categoryIndex;
-                      return (
-                        <SkillCategory
-                          key={category.category[language]}
-                          category={{
-                            ...category,
-                            category: category.category[language]
-                          }}
-                          inView={inView}
-                          actualIndex={actualIndex}
-                        />
-                      );
-                    })}
-                </div>
-              </div>
+              {Array.from({ length: totalSlides }, (_, slideIndex) => {
+                // Calcular la posición relativa de cada slide
+                let position = slideIndex - currentSlide;
+                if (position > totalSlides / 2) position -= totalSlides;
+                if (position < -totalSlides / 2) position += totalSlides;
+
+                // Determinar la clase CSS basada en la posición
+                let slideClass = 'skills-slide ';
+                if (position === 0) slideClass += 'active';
+                else if (position === 1) slideClass += 'next';
+                else if (position === -1) slideClass += 'prev';
+                else if (position === 2) slideClass += 'far-next';
+                else if (position === -2) slideClass += 'far-prev';
+                else slideClass += 'hidden';
+
+                return (
+                  <div key={slideIndex} className={slideClass}>
+                    <div className="skills-grid">
+                      {skills.categories
+                        .slice(
+                          slideIndex * categoriesPerSlide,
+                          (slideIndex + 1) * categoriesPerSlide
+                        )
+                        .map((category, categoryIndex) => {
+                          const actualIndex = slideIndex * categoriesPerSlide + categoryIndex;
+                          return (
+                            <SkillCategory
+                              key={`${slideIndex}-${category.category[language]}`}
+                              category={{
+                                ...category,
+                                category: category.category[language]
+                              }}
+                              inView={inView && position === 0}
+                              actualIndex={actualIndex}
+                            />
+                          );
+                        })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
