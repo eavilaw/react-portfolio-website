@@ -16,9 +16,10 @@ const Projects = () => {
 
   // Mapeo de iconos para proyectos
   const getProjectIcon = (title) => {
-    if (title.toLowerCase().includes('commerce')) return <FaShoppingCart />;
-    if (title.toLowerCase().includes('task')) return <FaTasks />;
-    if (title.toLowerCase().includes('dashboard') || title.toLowerCase().includes('analytics')) return <FaChartLine />;
+    const titleText = typeof title === 'object' ? title[language] : title;
+    if (titleText.toLowerCase().includes('commerce')) return <FaShoppingCart />;
+    if (titleText.toLowerCase().includes('task')) return <FaTasks />;
+    if (titleText.toLowerCase().includes('dashboard') || titleText.toLowerCase().includes('analytics')) return <FaChartLine />;
     return <FaShoppingCart />; // icono por defecto
   };
 
@@ -47,7 +48,7 @@ const Projects = () => {
                 {project.image ? (
                   <img 
                     src={project.image} 
-                    alt={project.title}
+                    alt={project.title[language]}
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -59,13 +60,13 @@ const Projects = () => {
                 </div>
               </div>
               <div className="project-content">
-                <h3>{project.title}</h3>
+                <h3>{project.title[language]}</h3>
                 {project.company && (
                   <div className="project-company">
                     <small>{project.company}</small>
                   </div>
                 )}
-                <p>{project.description}</p>
+                <p>{project.description[language]}</p>
                 <div className="project-tech">
                   {project.technologies.map((tech, i) => (
                     <span key={i}>{tech}</span>

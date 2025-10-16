@@ -458,43 +458,79 @@ export const projects = {
   },
   items: [
   {
-    title: "Aplicación Android TV para Monitoreo de Conectividad",
-    description: "Aplicación Android TV innovadora para sondeo de red y recolección de datos de calidad de conectividad domiciliaria, desde la conceptualización hasta la implementación completa.",
+    title: {
+      es: "Aplicación Android TV para Monitoreo de Conectividad",
+      en: "Android TV Application for Connectivity Monitoring"
+    },
+    description: {
+      es: "Aplicación Android TV innovadora para sondeo de red y recolección de datos de calidad de conectividad domiciliaria, desde la conceptualización hasta la implementación completa.",
+      en: "Innovative Android TV application for network probing and home connectivity quality data collection, from conceptualization to complete implementation."
+    },
     image: getAssetPath("/images/projects/Dashboard.jpg"),
     technologies: ["Android TV", "Python", "AWS", "MongoDB", "Docker"],
     company: "Grupo Z"
   },
   {
-    title: "Sistema de Bloqueo de STBs No Autorizados",
-    description: "Plataforma especializada para detección y bloqueo efectivo de Set-Top Boxes no autorizados, procesando más de 20GB de datos diarios desde AWS S3 hacia MongoDB.",
+    title: {
+      es: "Sistema de Bloqueo de STBs No Autorizados",
+      en: "Unauthorized STB Blocking System"
+    },
+    description: {
+      es: "Plataforma especializada para detección y bloqueo efectivo de Set-Top Boxes no autorizados, procesando más de 20GB de datos diarios desde AWS S3 hacia MongoDB.",
+      en: "Specialized platform for detection and effective blocking of unauthorized Set-Top Boxes, processing over 20GB of daily data from AWS S3 to MongoDB."
+    },
     image: getAssetPath("/images/projects/BloqueoSTB.jpg"),
     technologies: ["Python", "AWS S3", "MongoDB", "FastAPI", "Docker"],
     company: "ClaroVTR"
   },
   {
-    title: "Dashboard Ejecutivo de Analytics TV",
-    description: "Dashboard avanzado para visualización ejecutiva de métricas de televisión digital, utilizado por alta gerencia para análisis de grandes volúmenes de datos y detección de oportunidades de mejora.",
+    title: {
+      es: "Dashboard Ejecutivo de Analytics TV",
+      en: "TV Analytics Executive Dashboard"
+    },
+    description: {
+      es: "Dashboard avanzado para visualización ejecutiva de métricas de televisión digital, utilizado por alta gerencia para análisis de grandes volúmenes de datos y detección de oportunidades de mejora.",
+      en: "Advanced dashboard for executive visualization of digital television metrics, used by senior management for big data analysis and improvement opportunity detection."
+    },
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800",
     technologies: ["React", "Python", "AWS", "MongoDB", "D3.js"],
     company: "ClaroVTR"
   },
   {
-    title: "Plataforma IPTV Multinacional",
-    description: "Sistema integral de transmisión TV en vivo y Video on Demand para Android TV y aplicaciones móviles, desplegado en Puerto Rico, Chile, Panamá, Costa Rica y el Caribe.",
+    title: {
+      es: "Plataforma IPTV Multinacional",
+      en: "Multinational IPTV Platform"
+    },
+    description: {
+      es: "Sistema integral de transmisión TV en vivo y Video on Demand para Android TV y aplicaciones móviles, desplegado en Puerto Rico, Chile, Panamá, Costa Rica y el Caribe.",
+      en: "Comprehensive live TV and Video on Demand broadcasting system for Android TV and mobile applications, deployed in Puerto Rico, Chile, Panama, Costa Rica and the Caribbean."
+    },
     image: getAssetPath("/images/projects/iptv.jpg"),
     technologies: ["Android TV", "iOS", "Android", ".NET Core", "AWS", "PostgreSQL"],
     company: "Liberty Latin America"
   },
   {
-    title: "VTR OnDemand - Plataforma de Streaming",
-    description: "Plataforma web completa para streaming de contenido gratuito y de pago, con APIs optimizadas para aplicaciones móviles y coordinación técnica del festival Lollapalooza.",
+    title: {
+      es: "VTR OnDemand - Plataforma de Streaming",
+      en: "VTR OnDemand - Streaming Platform"
+    },
+    description: {
+      es: "Plataforma web completa para streaming de contenido gratuito y de pago, con APIs optimizadas para aplicaciones móviles y coordinación técnica del festival Lollapalooza.",
+      en: "Complete web platform for free and paid content streaming, with optimized APIs for mobile applications and technical coordination of the Lollapalooza festival."
+    },
     image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=1200&h=800",
     technologies: ["React", "Node.js", "MySQL", "AWS", "REST APIs"],
     company: "VTR"
   },
   {
-    title: "Sistema Bancario Grupo AVAL",
-    description: "Implementación de criterios de desarrollo para banca corporativa en 4 subsidiarias del grupo financiero más grande de Colombia, incluyendo servicios transaccionales y de consulta.",
+    title: {
+      es: "Sistema Bancario Grupo AVAL",
+      en: "Grupo AVAL Banking System"
+    },
+    description: {
+      es: "Implementación de criterios de desarrollo para banca corporativa en 4 subsidiarias del grupo financiero más grande de Colombia, incluyendo servicios transaccionales y de consulta.",
+      en: "Implementation of development criteria for corporate banking in 4 subsidiaries of Colombia's largest financial group, including transactional and query services."
+    },
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&h=800",
     technologies: ["Java", ".NET", "SQL Server", "SOAP", "WebServices"],
     company: "Excelsys / Grupo AVAL"
