@@ -1,6 +1,9 @@
 .skills {
-  padding: 5rem 0;
+  padding: 5rem 0 12rem 0;
   background: white;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .skills-grid {
@@ -13,10 +16,32 @@
 
 .skill-category {
   background: #f8f9fa;
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  height: fit-content;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Scrollbar personalizado para las categorías */
+.skill-category::-webkit-scrollbar {
+  width: 6px;
+}
+
+.skill-category::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.skill-category::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 3px;
+}
+
+.skill-category::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #5a6fd8, #6a4190);
 }
 
 .skill-category:hover {
@@ -166,21 +191,25 @@
 /* Estilos del carrusel 3D */
 .skills-carousel-container {
   position: relative;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  perspective: 1000px;
-  perspective-origin: center center;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  padding: 0 60px;
 }
 
 .skills-carousel {
   position: relative;
-  height: 600px;
-  margin: 2rem 0;
+  height: 750px;
+  margin: 2rem 0 6rem 0;
   transform-style: preserve-3d;
+  overflow: visible;
 }
 
 .skills-slide {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -188,41 +217,56 @@
   backface-visibility: hidden;
 }
 
+.skills-slide .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
 /* Estados del carrusel 3D */
 .skills-slide.active {
   transform: translateZ(0) rotateY(0deg) scale(1);
   opacity: 1;
-  z-index: 3;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .skills-slide.next {
-  transform: translateZ(-200px) rotateY(45deg) translateX(300px) scale(0.8);
-  opacity: 0.6;
-  z-index: 2;
+  transform: translateZ(-150px) rotateY(35deg) translateX(250px) scale(0.85);
+  opacity: 0.7;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .skills-slide.prev {
-  transform: translateZ(-200px) rotateY(-45deg) translateX(-300px) scale(0.8);
-  opacity: 0.6;
-  z-index: 2;
+  transform: translateZ(-150px) rotateY(-35deg) translateX(-250px) scale(0.85);
+  opacity: 0.7;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .skills-slide.far-next {
-  transform: translateZ(-400px) rotateY(90deg) translateX(500px) scale(0.6);
-  opacity: 0.3;
-  z-index: 1;
+  transform: translateZ(-300px) rotateY(70deg) translateX(400px) scale(0.7);
+  opacity: 0.4;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .skills-slide.far-prev {
-  transform: translateZ(-400px) rotateY(-90deg) translateX(-500px) scale(0.6);
-  opacity: 0.3;
-  z-index: 1;
+  transform: translateZ(-300px) rotateY(-70deg) translateX(-400px) scale(0.7);
+  opacity: 0.4;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .skills-slide.hidden {
-  transform: translateZ(-600px) rotateY(180deg) scale(0.4);
+  transform: translateZ(-500px) rotateY(120deg) scale(0.5);
   opacity: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
 /* Efectos adicionales para las cards en 3D */
@@ -358,47 +402,104 @@
   box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
 }
 
-/* Responsive para carrusel */
+/* Responsive para carrusel 3D */
 @media (max-width: 1200px) {
-  .skills-grid {
+  .skills-carousel-container {
+    padding: 0 40px;
+    perspective: 800px;
+  }
+  
+  .skills-slide .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .skills-slide.next {
+    transform: translateZ(-100px) rotateY(30deg) translateX(200px) scale(0.9);
+  }
+  
+  .skills-slide.prev {
+    transform: translateZ(-100px) rotateY(-30deg) translateX(-200px) scale(0.9);
   }
 }
 
 @media (max-width: 768px) {
   .skills {
-    padding: 3rem 0;
+    padding: 3rem 0 5rem 0;
   }
   
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .skills-carousel-container {
+    padding: 0 15px;
+    perspective: none; /* Deshabilitar 3D en mobile */
+  }
+  
+  .skills-carousel {
+    height: auto;
+    margin: 2rem 0;
+    overflow: hidden; /* Cambiar a overflow hidden en mobile */
+    transform-style: flat; /* Deshabilitar preserve-3d */
+  }
+  
+  .skills-slide {
+    position: relative; /* Cambiar de absolute a relative en mobile */
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    transform-style: flat;
+  }
+  
+  /* Simplificar completamente en mobile - solo mostrar slide activo */
+  .skills-slide.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 1;
+    display: block;
+  }
+  
+  .skills-slide.next,
+  .skills-slide.prev,
+  .skills-slide.far-next,
+  .skills-slide.far-prev,
+  .skills-slide.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 0;
+    display: none; /* Ocultar completamente en mobile */
+  }
+  
+  .skills-slide .skills-grid {
+    display: block; /* Cambiar a block en mobile */
+    width: 100%;
+    max-width: none;
   }
   
   .skill-category {
-    padding: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-height: none; /* Quitar restricción de altura en mobile */
+    overflow-y: visible;
   }
   
   .skill-item {
-    padding: 1.2rem;
+    padding: 1rem;
   }
   
   .skill-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
   
   .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
   }
   
   .carousel-btn-prev {
-    left: -15px;
+    left: -20px;
   }
   
   .carousel-btn-next {
-    right: -15px;
+    right: -20px;
   }
 }
 

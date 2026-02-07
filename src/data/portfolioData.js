@@ -252,6 +252,76 @@ export const experience = {
   items: [
   {
     title: {
+      es: "Fullstack Developer Senior",
+      en: "Senior Fullstack Developer"
+    },
+    company: "Grupo Falabella",
+    period: {
+      es: "Feb 2025 - Presente",
+      en: "Feb 2025 - Present"
+    },
+    description: {
+      es: "Desarrollo fullstack de aplicaciones empresariales financieras, liderando la implementación de un BFF (Backend For Frontend) para operaciones de transferencias bancarias en México, utilizando tecnologías modernas como Angular y NestJS.",
+      en: "Fullstack development of enterprise financial applications, leading the implementation of a BFF (Backend For Frontend) for banking transfer operations in Mexico, using modern technologies such as Angular and NestJS."
+    },
+    achievements: {
+      es: [
+        "Desarrollo de BFF con NestJS para gestionar transferencias bancarias, actuando como capa de integración entre frontend y servicios bancarios core",
+        "Implementación de frontend con Angular para interfaces de usuario de transferencias, garantizando experiencia fluida y responsiva",
+        "Diseño de arquitectura de microservicios para operaciones bancarias internacionales (México)",
+        "Integración con múltiples APIs bancarias y sistemas de pago, asegurando transacciones seguras y trazables",
+        "Implementación de medidas de seguridad avanzadas para protección de datos financieros y cumplimiento de normativas bancarias",
+        "Optimización de rendimiento del BFF para manejar alto volumen de transacciones concurrentes",
+        "Colaboración con equipos internacionales para alineamiento de requerimientos y entrega de soluciones"
+      ],
+      en: [
+        "Development of BFF with NestJS to manage banking transfers, acting as integration layer between frontend and core banking services",
+        "Implementation of frontend with Angular for transfer user interfaces, ensuring smooth and responsive experience",
+        "Design of microservices architecture for international banking operations (Mexico)",
+        "Integration with multiple banking APIs and payment systems, ensuring secure and traceable transactions",
+        "Implementation of advanced security measures for financial data protection and banking regulatory compliance",
+        "Performance optimization of BFF to handle high volume of concurrent transactions",
+        "Collaboration with international teams for requirements alignment and solution delivery"
+      ]
+    }
+  },
+  {
+    title: {
+      es: "Tech Lead / Arquitecto de Soluciones",
+      en: "Tech Lead / Solutions Architect"
+    },
+    company: "Coordinadora Eléctrica Nacional",
+    period: {
+      es: "Oct 2024 - Dic 2024",
+      en: "Oct 2024 - Dec 2024"
+    },
+    description: {
+      es: "Liderazgo en el diseño técnico y modernización de plataformas digitales orientadas a la automatización de procesos operacionales y administrativos, trabajando con áreas de negocio, arquitectura y proveedores externos. Actué como referente técnico en definición de arquitecturas, integración de sistemas y adopción de plataformas BPM/Low-Code.",
+      en: "Leadership in technical design and modernization of digital platforms focused on automating operational and administrative processes, working with business areas, architecture, and external providers. Acted as technical reference in architecture definition, system integration, and BPM/Low-Code platform adoption."
+    },
+    achievements: {
+      es: [
+        "Diseño de arquitectura AS-IS y TO-BE para digitalización de procesos críticos, reemplazando flujos manuales basados en Excel, macros y correos por soluciones centralizadas y trazables",
+        "Implementación de plataforma BPM (Appian) para modelar y orquestar procesos de negocio, habilitando la creación y modificación de flujos sin desarrollo tradicional",
+        "Definición de arquitectura de integración entre Appian, sistemas internos y canales omnicanal, considerando seguridad, desacoplamiento y buenas prácticas enterprise",
+        "Diseño de módulos conectores desplegados en entornos containerizados (OpenShift), actuando como capa de integración entre la plataforma BPM y sistemas corporativos",
+        "Modelado de procesos BPMN, documentación técnica (HLD / LLD) y preparación de material para comités de arquitectura y gobierno TI",
+        "Coordinación técnica con equipos internos y proveedores externos, validando entregables, estándares de calidad y alineamiento con requerimientos funcionales y no funcionales",
+        "Reducción significativa de dependencia de procesos manuales y mayor visibilidad del estado de los procesos para usuarios internos"
+      ],
+      en: [
+        "Design of AS-IS and TO-BE architecture for critical process digitalization, replacing manual flows based on Excel, macros, and emails with centralized and traceable solutions",
+        "Implementation of BPM platform (Appian) to model and orchestrate business processes, enabling flow creation and modification without traditional development",
+        "Definition of integration architecture between Appian, internal systems, and omnichannel channels, considering security, decoupling, and enterprise best practices",
+        "Design of connector modules deployed in containerized environments (OpenShift), acting as integration layer between BPM platform and corporate systems",
+        "BPMN process modeling, technical documentation (HLD / LLD), and material preparation for architecture and IT governance committees",
+        "Technical coordination with internal teams and external providers, validating deliverables, quality standards, and alignment with functional and non-functional requirements",
+        "Significant reduction of manual process dependency and increased visibility of process status for internal users"
+      ]
+    }
+  },
+  {
+    title: {
       es: "Product Manager",
       en: "Product Manager"
     },
