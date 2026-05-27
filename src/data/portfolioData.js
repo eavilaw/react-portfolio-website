@@ -252,36 +252,42 @@ export const experience = {
   items: [
   {
     title: {
-      es: "Fullstack Developer Senior",
-      en: "Senior Fullstack Developer"
+      es: "Cloud Engineer / Fullstack Senior",
+      en: "Cloud Engineer / Senior Fullstack"
     },
-    company: "Grupo Falabella",
+    company: "FactorIT",
     period: {
       es: "Feb 2025 - Presente",
       en: "Feb 2025 - Present"
     },
     description: {
-      es: "Desarrollo fullstack de aplicaciones empresariales financieras, liderando la implementación de un BFF (Backend For Frontend) para operaciones de transferencias bancarias en México, utilizando tecnologías modernas como Angular y NestJS.",
-      en: "Fullstack development of enterprise financial applications, leading the implementation of a BFF (Backend For Frontend) for banking transfer operations in Mexico, using modern technologies such as Angular and NestJS."
+      es: "Participación en proyecto estratégico de migración a la nube de IBM Cloud para cliente corporativo, liderando la modernización de aplicaciones legacy hacia una arquitectura cloud-native basada en contenedores, microservicios y servicios gestionados de IBM Cloud (Red Hat OpenShift, IBM Cloud Object Storage, IBM Cloud Databases y IBM Cloud Pak for Integration).",
+      en: "Participation in a strategic IBM Cloud migration project for a corporate client, leading the modernization of legacy applications into a cloud-native architecture based on containers, microservices and IBM Cloud managed services (Red Hat OpenShift, IBM Cloud Object Storage, IBM Cloud Databases and IBM Cloud Pak for Integration)."
     },
     achievements: {
       es: [
-        "Desarrollo de BFF con NestJS para gestionar transferencias bancarias, actuando como capa de integración entre frontend y servicios bancarios core",
-        "Implementación de frontend con Angular para interfaces de usuario de transferencias, garantizando experiencia fluida y responsiva",
-        "Diseño de arquitectura de microservicios para operaciones bancarias internacionales (México)",
-        "Integración con múltiples APIs bancarias y sistemas de pago, asegurando transacciones seguras y trazables",
-        "Implementación de medidas de seguridad avanzadas para protección de datos financieros y cumplimiento de normativas bancarias",
-        "Optimización de rendimiento del BFF para manejar alto volumen de transacciones concurrentes",
-        "Colaboración con equipos internacionales para alineamiento de requerimientos y entrega de soluciones"
+        "Diseño e implementación de la estrategia de migración (assessment, re-host, re-platform y re-factor) de aplicaciones on-premise hacia IBM Cloud, priorizando workloads según criticidad, dependencias y costo",
+        "Contenedorización de aplicaciones legacy (.NET, Node.js y Python) y despliegue en Red Hat OpenShift sobre IBM Cloud, definiendo Helm Charts, manifests Kubernetes y políticas de recursos",
+        "Construcción de pipelines CI/CD con GitHub Actions y Tekton para automatizar build, pruebas, escaneo de imágenes y despliegue continuo a múltiples entornos (dev, qa, prod)",
+        "Definición de infraestructura como código con Terraform y IBM Cloud Schematics para aprovisionamiento reproducible de VPC, subnets, clústeres OpenShift, IAM y servicios gestionados",
+        "Migración de bases de datos hacia IBM Cloud Databases (PostgreSQL y MongoDB) y de archivos hacia IBM Cloud Object Storage, garantizando integridad, cifrado y mínima ventana de downtime",
+        "Integración de sistemas mediante IBM Cloud Pak for Integration y API Connect, exponiendo APIs seguras con OAuth2/JWT y políticas de rate limiting",
+        "Implementación de observabilidad end-to-end con IBM Cloud Monitoring (Sysdig), IBM Log Analysis y Instana para métricas, logs y trazas distribuidas",
+        "Hardening de seguridad aplicando IBM Cloud IAM, Key Protect para gestión de llaves, Secrets Manager y políticas de red (VPE, Security Groups) alineadas a buenas prácticas Zero Trust",
+        "Optimización de costos en IBM Cloud mediante rightsizing de nodos, autoscaling de OpenShift y análisis de consumo, logrando reducción significativa del gasto mensual proyectado",
+        "Documentación técnica (HLD/LLD), runbooks operativos y transferencia de conocimiento a los equipos de operaciones del cliente"
       ],
       en: [
-        "Development of BFF with NestJS to manage banking transfers, acting as integration layer between frontend and core banking services",
-        "Implementation of frontend with Angular for transfer user interfaces, ensuring smooth and responsive experience",
-        "Design of microservices architecture for international banking operations (Mexico)",
-        "Integration with multiple banking APIs and payment systems, ensuring secure and traceable transactions",
-        "Implementation of advanced security measures for financial data protection and banking regulatory compliance",
-        "Performance optimization of BFF to handle high volume of concurrent transactions",
-        "Collaboration with international teams for requirements alignment and solution delivery"
+        "Designed and implemented the migration strategy (assessment, re-host, re-platform and re-factor) of on-premise applications to IBM Cloud, prioritizing workloads by criticality, dependencies and cost",
+        "Containerized legacy applications (.NET, Node.js and Python) and deployed them on Red Hat OpenShift on IBM Cloud, defining Helm Charts, Kubernetes manifests and resource policies",
+        "Built CI/CD pipelines with GitHub Actions and Tekton to automate build, testing, image scanning and continuous deployment to multiple environments (dev, qa, prod)",
+        "Defined infrastructure as code with Terraform and IBM Cloud Schematics for reproducible provisioning of VPC, subnets, OpenShift clusters, IAM and managed services",
+        "Migrated databases to IBM Cloud Databases (PostgreSQL and MongoDB) and files to IBM Cloud Object Storage, ensuring integrity, encryption and minimal downtime window",
+        "Integrated systems through IBM Cloud Pak for Integration and API Connect, exposing secure APIs with OAuth2/JWT and rate-limiting policies",
+        "Implemented end-to-end observability with IBM Cloud Monitoring (Sysdig), IBM Log Analysis and Instana for metrics, logs and distributed tracing",
+        "Hardened security with IBM Cloud IAM, Key Protect for key management, Secrets Manager and network policies (VPE, Security Groups) aligned with Zero Trust best practices",
+        "Optimized IBM Cloud costs through node rightsizing, OpenShift autoscaling and consumption analysis, achieving a significant reduction of the projected monthly spend",
+        "Produced technical documentation (HLD/LLD), operational runbooks and knowledge transfer to the client's operations teams"
       ]
     }
   },
